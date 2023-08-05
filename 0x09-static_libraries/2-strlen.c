@@ -1,16 +1,18 @@
-#include <stdio.h>
+#include "main.h"
 /**
- * _strlen - find the length of a string
- * @s: pointer to the string to check
- * Return: void
+ * _strchr - locates a character in a string,
+ * @s: string.
+ * @c: character.
+ * Return: the pointer to the first occurrence of the character c.
  */
-
-
-int _strlen(char *s)
+char *_strchr(char *s, char c)
 {
-int i = 0;
-while (s[i])
-	i++;
+	unsigned int i = 0;
 
-return (i);
+	for (; *(s + i) != '\0'; i++)
+		if (*(s + i) == c)
+			return (s + i);
+	if (*(s + i) == c)
+		return (s + i);
+	return ('\0');
 }
